@@ -1,7 +1,7 @@
 
 var express = require('express');
 var app = express();
-
+var port = process.env.port || 3000;
 var hbs = require('hbs');
 //hbs.registerPartials(__dirname+'/views/partials');
 hbs.registerPartials(__dirname+ '/views/partials');
@@ -27,6 +27,6 @@ app.get('/about', (req, res) => {
         title:'About page'
     });
 });
-app.listen(3000, function(){
-    console.log('-------application started------');
+app.listen(port, function(){
+    console.log('-------application started------'+port);
 });
